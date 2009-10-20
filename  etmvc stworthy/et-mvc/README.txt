@@ -1,9 +1,9 @@
-ÖÂetmvc¿ò¼ÜÓÃ»§£º
+è‡´etmvcæ¡†æž¶ç”¨æˆ·ï¼š
 
-    ·Ç³£¸ÐÐ»ÄúÑ¡Ôñetmvc£¬ÏàÐÅËý»áÎªÄúµÄ¿ª·¢¹¤×÷´øÀ´±ãÀû¡£
-    ÎªÁËÄú¸üºÃµØÊ¹ÓÃetmvc£¬ÇëÄú²ÎÔÄÔÚÏßÎÄµµhttp://www.etmvc.cn/tutorial/index¡£
-    »¶Ó­·ÃÎÊÎÒÃÇµÄÍøÕ¾£ºhttp://www.etmvc.cn¡£
-    »¶Ó­Ìá±¦¹óÒâ¼ûºÍ½¨Òé¡£
+    éžå¸¸æ„Ÿè°¢æ‚¨é€‰æ‹©etmvcï¼Œç›¸ä¿¡å¥¹ä¼šä¸ºæ‚¨çš„å¼€å‘å·¥ä½œå¸¦æ¥ä¾¿åˆ©ã€‚
+    ä¸ºäº†æ‚¨æ›´å¥½åœ°ä½¿ç”¨etmvcï¼Œè¯·æ‚¨å‚é˜…åœ¨çº¿æ–‡æ¡£http://www.etmvc.cn/tutorial/indexã€‚
+    æ¬¢è¿Žè®¿é—®æˆ‘ä»¬çš„ç½‘ç«™ï¼šhttp://www.etmvc.cnã€‚
+    æ¬¢è¿Žæå®è´µæ„è§å’Œå»ºè®®ã€‚
 
 Copyright 2009 junxian she
 junxian she <stworthy@gmail.com>
