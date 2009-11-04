@@ -86,7 +86,10 @@ public class DispatcherFilter implements Filter {
         }
         while(urls.hasMoreElements()){
             URL url = urls.nextElement();
-            if (url.getProtocol().equalsIgnoreCase("file")){
+            String protocol = url.getProtocol();
+            if (protocol.equalsIgnoreCase("file") ||
+            		protocol.equalsIgnoreCase("vfsfile")){
+            	
                 String filePath = URLDecoder.decode(url.getFile(), "UTF-8");
                 File file = new File(filePath);
                 File[] ff = file.listFiles();
@@ -100,7 +103,10 @@ public class DispatcherFilter implements Filter {
                     }
                 }
             }
-            else if (url.getProtocol().equalsIgnoreCase("jar")){
+            else if (protocol.equalsIgnoreCase("jar") ||
+            		protocol.equalsIgnoreCase("zip") ||
+            		protocol.equalsIgnoreCase("wsjar")){
+            	
                 JarFile jar = ((JarURLConnection)url.openConnection()).getJarFile();
                 Enumeration<JarEntry> entries = jar.entries();
                 while(entries.hasMoreElements()){
