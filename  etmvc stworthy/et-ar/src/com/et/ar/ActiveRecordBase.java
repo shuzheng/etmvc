@@ -226,6 +226,15 @@ public class ActiveRecordBase {
     }
     
     /**
+     * 取得数据库适配器
+     * @param c 指定的数据库连接所绑定的类class
+     * @return 数据库适配器
+     */
+    public static Adapter getConnectionAdapter(Class<?> c){
+    	return adapters.get(getBaseClassName(c));
+    }
+    
+    /**
      * 设置连接适配器
      * @param domainClassName 域基类，由它登记数据库连接信息
      * @param adapter 适配器
