@@ -175,17 +175,17 @@ public class Json {
 			java.sql.Date v = (java.sql.Date) obj;
 			String s = df.format(new java.util.Date(v.getTime()));
 			return "\"" + s + "\"";
-		} else if (obj instanceof java.util.Date) {
-			java.text.SimpleDateFormat df = new java.text.SimpleDateFormat(
-			"yyyy-MM-dd");
-			java.util.Date v = (java.util.Date) obj;
-			String s = df.format(v);
-			return "\"" + s + "\"";
 		} else if (obj instanceof java.sql.Timestamp) {
 			java.text.SimpleDateFormat df = new java.text.SimpleDateFormat(
 					"yyyy-MM-dd HH:mm:ss");
 			java.sql.Timestamp v = (java.sql.Timestamp) obj;
 			String s = df.format(new java.util.Date(v.getTime()));
+			return "\"" + s + "\"";
+		} else if (obj instanceof java.util.Date) {
+			java.text.SimpleDateFormat df = new java.text.SimpleDateFormat(
+			"yyyy-MM-dd");
+			java.util.Date v = (java.util.Date) obj;
+			String s = df.format(v);
 			return "\"" + s + "\"";
 		} else {
 			return null;
