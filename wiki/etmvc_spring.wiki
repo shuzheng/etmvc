@@ -99,4 +99,3 @@ public class UserController extends ApplicationController{
 }}}
 
 至此，程序编写完毕，可以部署运行，试一试执行http://localhost:8080/myweb/user/say和http://localhost:8080/myweb/user/show，将看到问候信息和用户资料列表。
-
