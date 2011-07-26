@@ -166,8 +166,9 @@ public class Json {
 			v = v.replaceAll("\\\\", "\\\\\\\\");
 			v = v.replaceAll("\n", "\\\\n");
 			v = v.replaceAll("\r", "\\\\r");
+			v = v.replaceAll("\t", "\\\\t");
 			v = v.replaceAll("\"", "\\\\\"");
-			v = v.replaceAll("'", "\\\\\'");
+//			v = v.replaceAll("'", "\\\\\'");
 			return "\"" + v + "\"";
 		} else if (obj instanceof java.sql.Date) {
 			java.text.SimpleDateFormat df = new java.text.SimpleDateFormat(
