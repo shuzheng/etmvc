@@ -19,7 +19,7 @@ ActiveRecord模型对象支持的回调方法有：
 
 我们来看一下用户的模型类定义：
 
-```
+```java
 @Table(name="users")
 public class User extends ActiveRecordBase{
 	@Id private Integer id;
@@ -45,7 +45,7 @@ public class User extends ActiveRecordBase{
 
 我们重载了afterDestroy，告诉ActiveRecord框架，在记录删除后将相关的照片文件删除。现在来看调用代码：
 
-```
+```java
 User user = User.find(User.class, 1);
 user.destroy();
 ```
