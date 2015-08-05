@@ -1,6 +1,8 @@
+## 利用etmvc中的模型绑定简化Action方法的编写
+
 我们以一个用户注册的例子来说明模型绑定问题。首先，建立一个用户注册表单：
 
-```
+```html
         <h1>用户注册</h1>
         <form action="<c:url value="/user/save"/>" method="POST">
             <p>名称：<input type="text" name="name"></p>
@@ -13,7 +15,7 @@
 ```
 现在编写控制器用以处理表单：
 
-```
+```java
 public class UserController extends ApplicationController{
     /**
      * 用户注册页面
@@ -42,7 +44,7 @@ public class UserController extends ApplicationController{
 
 但我们有更好的处理方法，我们建立一个User对象来描述表单，这个相当于struts中的ActionForm，
 
-```
+```java
 public class User {
     private String name;
     private String password;
@@ -54,7 +56,7 @@ public class User {
 ```
 现在，我们改写控制器中的save方法：
 
-```
+```java
 public class UserController extends ApplicationController{
     /**
      * 用户注册页面
@@ -78,7 +80,7 @@ public class UserController extends ApplicationController{
 
 etmvc处理大部分常用的数据类型绑定，如果想自已处理数据转换绑定，可以实现DataBinder接口，如：
 
-```
+```java
 public class DateBinder implements DataBinder{
     public Object bind(BindingContext ctx) throws Exception{
         //...
@@ -88,7 +90,7 @@ public class DateBinder implements DataBinder{
 ```
 然后进行注册：
 
-```
+```java
 DataBinders.register(java.util.Date.class, new DateBinder());
 ```
 这时候就可以在Action方法中使用java.util.Date参数类型了。
