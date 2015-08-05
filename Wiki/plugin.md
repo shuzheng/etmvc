@@ -31,26 +31,26 @@ public class RouteLoader implements PlugIn{
 2、注册插件，在web.xml中增加一个plugin的参数：
 
 ```xml
-  <filter>
-  	<filter-name>etmvc</filter-name>
-  	<filter-class>com.et.mvc.DispatcherFilter</filter-class>
-  	<init-param>
-  		<param-name>controllerBasePackage</param-name>
-  		<param-value>controllers</param-value>
-  	</init-param>
-  	<init-param>
-  		<param-name>viewBasePath</param-name>
-  		<param-value>/views</param-value>
-  	</init-param>
-  	<init-param>
-  		<param-name>plugin</param-name>
-  		<param-value>utils.RouteLoader</param-value>
-  	</init-param>
-  </filter>
-  <filter-mapping>
-  	<filter-name>etmvc</filter-name>
-  	<url-pattern>/*</url-pattern>
-  </filter-mapping>
+<filter>
+	<filter-name>etmvc</filter-name>
+	<filter-class>com.et.mvc.DispatcherFilter</filter-class>
+	<init-param>
+		<param-name>controllerBasePackage</param-name>
+		<param-value>controllers</param-value>
+	</init-param>
+	<init-param>
+		<param-name>viewBasePath</param-name>
+		<param-value>/views</param-value>
+	</init-param>
+	<init-param>
+		<param-name>plugin</param-name>
+		<param-value>utils.RouteLoader</param-value>
+	</init-param>
+</filter>
+<filter-mapping>
+	<filter-name>etmvc</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
 ```
 
 plugin参数值为插件实现类的名称，如果有多个插件，则以“,”分开。
