@@ -3,7 +3,7 @@ AR提供一个简单的连接池实现，如果需要使用更高效的连接池
 
 1、配置spring的连接池
 
-```
+```xml
        <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
            <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
            <property name="url" value="jdbc:mysql://localhost/mydb"/>
@@ -13,7 +13,7 @@ AR提供一个简单的连接池实现，如果需要使用更高效的连接池
 ```
 
 2、配置AR的连接工厂
-```
+```xml
        <bean id="ds1" class="com.et.ar.ConnectionFactoryBean">
            <property name="domainBaseClass" value="com.et.ar.ActiveRecordBase"/>
            <property name="adapterClass" value="com.et.ar.adapters.MySqlAdapter"/>
@@ -23,7 +23,7 @@ AR提供一个简单的连接池实现，如果需要使用更高效的连接池
 
 这样就完成了切换数据源的操作，下面再给出一个使用多数据库的配置实例
 
-```
+```xml
     <bean id="dataSource1"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource"
           p:driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
