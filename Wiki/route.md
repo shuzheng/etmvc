@@ -1,3 +1,5 @@
+## etmvc框架对URL路由的支持
+
 etmvc框架使用路由技术实现把URL映射到控制器类中的action方法上，典型的http://localhost:8080/xxx/user/show将映射到UserController类中的show方法上，实际上这个规则是允许改变的。etmvc框架将允许你自定义自已的匹配规则来映射你的控制器类及其行为，这就需要定义路由。
 
 一个路由的定义由一些占位符组成，占位符由美元符后面跟着字母组成，如“$controller/$action/$id”，这是框架采用的默认路由。根据这个路由，下面的这些例子将被匹配：
@@ -13,19 +15,19 @@ etmvc框架使用路由技术实现把URL映射到控制器类中的action方法
 
 定义一个新的路由时，必须实例化Route，如下面的这个例子：
 
-```
-		Route route = new Route("blog/$year/$month/$day", DefaultRouteHandler.class);
-		route.setController("blog");
-		route.setAction("show");
-		RouteTable.addRoute(0, route);
+```java
+Route route = new Route("blog/$year/$month/$day", DefaultRouteHandler.class);
+route.setController("blog");
+route.setAction("show");
+RouteTable.addRoute(0, route);
 ```
 
 其中我们定义了嵌入式变量$year,$month,$day，这个路由规划将能够映射到BlogController类中的方法：
 
-```
-	public String show(int year, int month, int day) {
-		return year + "-" + month + "-" + day;
-	}
+```java
+public String show(int year, int month, int day) {
+	return year + "-" + month + "-" + day;
+}
 ```
 
 嵌入式变量将自动映射成方法的参数。
