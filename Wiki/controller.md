@@ -69,11 +69,11 @@ public class UserController extends ApplicationController{
 
 2、我们来建立login.jsp视图：
 ```html
-        <form action="<c:url value="/user/handleLogin"/>" method="POST">
-            <p>用户名：<input type="text" name="username"></p>
-            <p>密码：<input type="password" name="password"></p>
-            <p><input type="submit" value="提交"></p>
-        </form>
+<form action="<c:url value="/user/handleLogin"/>" method="POST">
+    <p>用户名：<input type="text" name="username"></p>
+    <p>密码：<input type="password" name="password"></p>
+    <p><input type="submit" value="提交"></p>
+</form>
 ```
 
 我们看到FORM中的action的URL指向，这个URL将映射到我们控制器中的handleLogin方法，而该方法将返回String类型，etmvc将其解释了文本视图，所以将会在浏览器上显示登录的信息。
