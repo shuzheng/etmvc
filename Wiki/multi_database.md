@@ -1,6 +1,8 @@
+## ActiveRecord中同时访问多个数据库
+
 我们先来看一下ActiveRecord（下简称AR）的基本配置：
 
-```
+```java
 domain_base_class=com.et.ar.ActiveRecordBase
 
 com.et.ar.ActiveRecordBase.driver_class=com.mysql.jdbc.Driver
@@ -14,7 +16,7 @@ com.et.ar.ActiveRecordBase.pool_size=2
 
 如果我们想同时使用多个数据库，这时我们可以先定义二个基类：
 
-```
+```java
 public class Base1 extends ActiveRecordBase{
 }
 public class Base2 extends ActiveRecordBase{
@@ -23,7 +25,7 @@ public class Base2 extends ActiveRecordBase{
 
 然后进行配置：
 
-```
+```java
 domain_base_class=models.Base1 models.Base2
 
 models.Base1.driver_class=com.mysql.jdbc.Driver
