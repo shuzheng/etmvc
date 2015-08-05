@@ -27,7 +27,7 @@ etmvc框架包括mvc和一个可选的orm实现，可选的orm实现是一个Act
   1. 获取最新的框架：从本站获取最新的etmvc框架。
   1. 建立WEB项目，将下载的压缩文件解压至项目的/WEB-INF/lib目录中。
   1. 配置数据库，在/WEB-INF/classes目录中建立数据库连接配置文件activerecord.properties， 配置示例：
-```
+```xml
 domain_base_class=com.et.ar.ActiveRecordBase  
   
 com.et.ar.ActiveRecordBase.driver_class=com.mysql.jdbc.Driver  
@@ -37,7 +37,7 @@ com.et.ar.ActiveRecordBase.password=soft123456
 com.et.ar.ActiveRecordBase.pool_size=2 
 ```
   1. 配置/WEB-INF/web.xml，添加一个过滤器，配置示例：
-```
+```xml
     <filter>
         <filter-name>etmvc</filter-name>
         <filter-class>com.et.mvc.DispatcherFilter</filter-class>
