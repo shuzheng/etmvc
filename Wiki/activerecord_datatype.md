@@ -48,9 +48,9 @@ public class DateConverter implements Converter {
 最后将这个转换器进行注册登记：
 
 ```java
-	static{
-		ConvertUtil.register(new DateConverter(), java.sql.Date.class);
-	}
+static{
+	ConvertUtil.register(new DateConverter(), java.sql.Date.class);
+}
 ```
 
 好了，ActiveRecord在处理到需要映射成java.sql.Date类型的字段时会调用我们自定义的转换器进行处理。
