@@ -132,4 +132,4 @@ public class HelloController extends ApplicationController{
 
 ## License
 
-  [GNU GPL v3](http://www.gnu.org/licenses/gpl.html)
+  [GPL](http://www.gnu.org/licenses/gpl.html)
