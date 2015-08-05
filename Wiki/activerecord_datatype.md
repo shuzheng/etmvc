@@ -28,7 +28,7 @@ etmvc中的ActiveRecord将数据表中的字段映射成模型类的字段，相
 
 我们需要为上面的这种转换编写一个转换器，转换器必须实现com.et.ar.Converter接口：
 
-```
+```java
 public class DateConverter implements Converter {
 	@Override
 	public Object convert(Object value) {
@@ -45,7 +45,7 @@ public class DateConverter implements Converter {
 
 最后将这个转换器进行注册登记：
 
-```
+```java
 	static{
 		ConvertUtil.register(new DateConverter(), java.sql.Date.class);
 	}
