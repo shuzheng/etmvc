@@ -1,7 +1,8 @@
 # etmvc
 一个简易高效的web开发框架
 
-etmvc是基于Java技术，为WEB开发提供的一套简易MVC框架。 简易但不简单，其设计和实现借鉴业界众多的优秀框架，如struts,spring mvc,ror,grails等， 力图为Java开发人员提供一套高效的开发框架。
+  etmvc是基于Java技术，为WEB开发提供的一套简易MVC框架。
+  简易但不简单，其设计和实现借鉴业界众多的优秀框架，如struts,spring mvc,ror,grails等， 力图为Java开发人员提供一套高效的开发框架。
 
 * 基于java技术开发，继承其强大、稳定、安全、高效、跨平台等多方面的优点
 * 约定优于配置，免除开发过程中的配置之苦
@@ -42,3 +43,11 @@ etmvc是基于Java技术，为WEB开发提供的一套简易MVC框架。 简易�
 * [etmvc中使用环绕过滤器处理异常](https://github.com/shuzheng/etmvc/blob/master/Wiki/aroundfilter_exception.md)
 * [etmvc中的国际化处理](https://github.com/shuzheng/etmvc/blob/master/Wiki/i18n.md)
 * [etmvc框架集成spring](https://github.com/shuzheng/etmvc/blob/master/Wiki/etmvc_spring.md)
+
+## 声明
+
+  首先感谢作者`stworthy`分享的etmvc项目，由于作者已停止更新etmvc且托管的Google Code要于2016年1月25日关闭，故本人将项目转过来接手并加以维护并更新。
+
+## License
+
+  [GNU GPL v3](http://www.gnu.org/licenses/gpl.html)
