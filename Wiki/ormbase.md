@@ -1,8 +1,10 @@
+## ORM-ActiveRecord基础
+
 etmvc中访问数据可以使用JDBC,HIBERNATE等，鉴于JDBC的烦琐和HIBERNATE的复杂，我们同时提供了一个ORM的简易实现版本ActiveRecord。在大多数中小型WEB系统中，使用ActiveRecord就足够了。
 
 1、使用前须将et-ar.jar, asm.jar, cglib.jar等包引入项目，然后进行配置activerecord.properties：
 
-```
+```java
 domain_base_class=com.et.ar.ActiveRecordBase
 
 com.et.ar.ActiveRecordBase.driver_class=com.mysql.jdbc.Driver
@@ -13,7 +15,7 @@ com.et.ar.ActiveRecordBase.pool_size=2
 ```
 在上面配置中我们配置了MYSQL数据库连接，配置文件activerecord.properties放在CLASSPATH能找到的地方就好。
 2、我们来建立一张数据表：
-```
+```sql
 create table users(
 id int primary key auto_increment,
 name varchar(10) default null,
@@ -25,7 +27,7 @@ remark varchar(50) default null
 
 然后建立对应的域对象：
 
-```
+```sql
 @Table(name="users")
 public class User extends ActiveRecordBase{
     @Id private Integer id;
@@ -41,7 +43,7 @@ public class User extends ActiveRecordBase{
 3、基本的CRUD操作
 
 增加记录：
-```
+```java
         User user = new User();
         user.setName("name1");
         user.setAddr("addr1");
@@ -49,7 +51,7 @@ public class User extends ActiveRecordBase{
         user.save();
 ```
 修改记录：
-```
+```java
         User user = User.find(User.class, 3);
         user.setRemark("user remark");
         user.save();
@@ -57,13 +59,13 @@ public class User extends ActiveRecordBase{
 
 删除记录：
 
-```
+```java
         User user = User.find(User.class, 3);
         user.destroy();
 ```
 
 查询记录：
-```
+```java
         List<User> users = User.findAll(User.class);
         for(User user: users){
             System.out.println(user.getName());
@@ -71,7 +73,7 @@ public class User extends ActiveRecordBase{
 ```
 
 条件查询：
-```
+```java
         List<User> users = User.findAll(User.class, "addr like ?", new Object[]{"%百花路%"});
         for(User user: users){
             System.out.println(user.getName());
