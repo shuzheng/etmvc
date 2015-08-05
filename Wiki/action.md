@@ -1,3 +1,5 @@
+##Action方法和控制器环境
+
 当请求到达时，etmvc将创建控制器对象，控制器对象会查找与“被请求的action”同名的public实例方法。如此看来，控制器的Action方法是允许被继承的。如果你希望某些方法不被作为action调用，可以将其声明为protected或者private。比如有如下的控制器：
 
 ```java
