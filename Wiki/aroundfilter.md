@@ -1,10 +1,12 @@
+## etmvc中使用环绕过滤器
+
 etmvc中支持前置过滤器，后置过滤器和环绕过滤器，前面介绍过前置过滤器了，请参阅《etmvc的过滤器基础》。
 
 环绕过滤器是功能最强的一类过滤器，允许拦截action方法的执行前和执行后，这实际上就是一种AOP。所以通过环绕过滤器，我们可以在action方法执行前和执行后处理一些逻辑，甚至中断action的执行，可以用它做日志处理、异常处理等。
 
 etmvc中创建一个环绕过滤器同前置过滤器有些不同，前置过滤器只要简单在控制器中编写一个方法就行了，环绕过滤器必须是单独的一个类，这个类要求实现AroundHandler接口，或者继承AbstractAroundHandler。我们先来看个简单的环绕过滤器例子：
 
-```
+```java
 public class TestAroundFilter implements AroundHandler{
 	
 	@Override
@@ -28,7 +30,7 @@ public class TestAroundFilter implements AroundHandler{
 
 好了，我们来看看这个环绕过滤器怎样安装到控制器上，看下面的示例：
 
-```
+```java
 @AroundFilter(execute=TestAroundFilter.class)
 public class HelloController extends ApplicationController{
 	public String say() throws Exception{
