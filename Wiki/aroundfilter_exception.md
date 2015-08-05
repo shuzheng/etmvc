@@ -1,10 +1,12 @@
+## etmvc中使用环绕过滤器处理异常
+
 etmvc框架中可以使用环绕过滤来处理异常，在WEB应用程序中如果需要处理全局的异常，比如我们可能需要拦截全局的异常然后集中处理，这时可以使用环绕过滤器。
 
 下面给出一个参考的处理方法：
 
 定义异常过滤器：
 
-```
+```java
 public class ExceptionFilter implements AroundHandler{
 
 	@Override
@@ -28,7 +30,7 @@ public class ExceptionFilter implements AroundHandler{
 
 异常过滤器中检测到有异常发生，则重定向到全局的错误页面，为了方便，我们将错误页面显示的方法写在了ApplicationController类中，当然也可以专门写个处理异常的控制器：
 
-```
+```java
 @AroundFilter(execute=ExceptionFilter.class)
 public class ApplicationController extends Controller{
 	public void error() throws Exception{
@@ -42,7 +44,7 @@ public class ApplicationController extends Controller{
 
 最后需要一个页面(/views/applicaion/error.jsp)来显示异常信息：
 
-```
+```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
