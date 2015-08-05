@@ -17,11 +17,11 @@ com.et.ar.ActiveRecordBase.pool_size=2
 2、我们来建立一张数据表：
 ```sql
 create table users(
-id int primary key auto_increment,
-name varchar(10) default null,
-addr varchar(50) default null,
-email varchar(50) default null,
-remark varchar(50) default null
+    id int primary key auto_increment,
+    name varchar(10) default null,
+    addr varchar(50) default null,
+    email varchar(50) default null,
+    remark varchar(50) default null
 )
 ```
 
@@ -44,39 +44,39 @@ public class User extends ActiveRecordBase{
 
 增加记录：
 ```java
-        User user = new User();
-        user.setName("name1");
-        user.setAddr("addr1");
-        user.setEmail("name1@gmail.com");
-        user.save();
+User user = new User();
+user.setName("name1");
+user.setAddr("addr1");
+user.setEmail("name1@gmail.com");
+user.save();
 ```
 修改记录：
 ```java
-        User user = User.find(User.class, 3);
-        user.setRemark("user remark");
-        user.save();
+User user = User.find(User.class, 3);
+user.setRemark("user remark");
+user.save();
 ```
 
 删除记录：
 
 ```java
-        User user = User.find(User.class, 3);
-        user.destroy();
+User user = User.find(User.class, 3);
+user.destroy();
 ```
 
 查询记录：
 ```java
-        List<User> users = User.findAll(User.class);
-        for(User user: users){
-            System.out.println(user.getName());
-        }
+List<User> users = User.findAll(User.class);
+for(User user: users){
+    System.out.println(user.getName());
+}
 ```
 
 条件查询：
 ```java
-        List<User> users = User.findAll(User.class, "addr like ?", new Object[]{"%百花路%"});
-        for(User user: users){
-            System.out.println(user.getName());
-        }
+List<User> users = User.findAll(User.class, "addr like ?", new Object[]{"%百花路%"});
+for(User user: users){
+    System.out.println(user.getName());
+}
 ```
 我们看到，借助ActiveRecord，操作数据是如此容易。
