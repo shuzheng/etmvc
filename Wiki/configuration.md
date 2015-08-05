@@ -5,26 +5,26 @@ etmvc遵循“约定优于配置”的原则，通过文件的命名及存放位
 etmvc的配置只有一处，即在web.xml中配置一个filter，如下所示：
 
 ```xml
-    <filter>
-        <filter-name>etmvc</filter-name>
-        <filter-class>com.et.mvc.DispatcherFilter</filter-class>
-        <init-param>
-            <param-name>controllerBasePackage</param-name>
-            <param-value>controllers</param-value>
-        </init-param>
-        <init-param>
-            <param-name>viewBasePath</param-name>
-            <param-value>/views</param-value>
-        </init-param>
-        <init-param>
-            <param-name>plugin</param-name>
-            <param-value>plugin.OcrServer</param-value>
-        </init-param>
-        </filter>
-    <filter-mapping>
-        <filter-name>etmvc</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
+<filter>
+    <filter-name>etmvc</filter-name>
+    <filter-class>com.et.mvc.DispatcherFilter</filter-class>
+    <init-param>
+        <param-name>controllerBasePackage</param-name>
+        <param-value>controllers</param-value>
+    </init-param>
+    <init-param>
+        <param-name>viewBasePath</param-name>
+        <param-value>/views</param-value>
+    </init-param>
+    <init-param>
+        <param-name>plugin</param-name>
+        <param-value>plugin.OcrServer</param-value>
+    </init-param>
+    </filter>
+<filter-mapping>
+    <filter-name>etmvc</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
 ```
 
 其中，filter的初始参数有三个：controllerBasePackage, viewBasePath, plugin，说明如下：
