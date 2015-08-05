@@ -1,3 +1,5 @@
+## ActiveRecord中的数据类型映射
+
 etmvc中的ActiveRecord将数据表中的字段映射成模型类的字段，相应的将数据表中的字段类型映射成模型类的字段类型。
 
 在多数情况下，ActiveRecord能够自动处理从JDBC类型到Java Object类型的映射，此种映射如下表所示：
