@@ -1,3 +1,5 @@
+## 关于etmvc的视图
+
 我们来探讨etmvc如何使用视图，前面关于“Action方法”的介绍中我们提到，每个请求将会映射到一个Action方法。etmvc将根据Action方法的返回类型来决定使用何种视图，大体有以下三种：
 
   1. 返回void时将使用JSP视图。
@@ -6,7 +8,7 @@
 
 下面我们来分别说明，如有如下的action方法：
 
-```
+```java
 public class UserController extends ApplicationController{
     public void test1(){
         request.setAttribute("hello", "hello,test1");
@@ -16,16 +18,16 @@ public class UserController extends ApplicationController{
 
 action方法“test1”的返回类型是void，这时etmvc将其解释为JSP视图，将会查找/views/user/test1.jsp的文件，文件内容：
 
-```
-    <body>
-        <h1>Hello World!</h1>
-        <p>${hello}</p>
-    </body>
+```jsp
+<body>
+    <h1>Hello World!</h1>
+    <p>${hello}</p>
+</body>
 ```
 
 我们来编写返回类型是String的action方法：
 
-```
+```java
 public class UserController extends ApplicationController{
     public String test2(){
         return "hello,test2";
@@ -37,7 +39,7 @@ public class UserController extends ApplicationController{
 
 如果返回类型是View或其子类型，则etmvc会使用其定义的视图，如下所示：
 
-```
+```java
 public class UserController extends ApplicationController{
     public JspView test3(){
         JspView view = new JspView();
@@ -57,7 +59,7 @@ public class UserController extends ApplicationController{
 
 我们现来看个JsonView的例子，JsonView能够处理多种数据结构，能够将其正确地转换成客户端需要的JSON串，这在AJAX 的开发中非常有用，同EXTJS整合时也会很容易，如下所示：
 
-```
+```java
 public class UserController extends ApplicationController{
     public JsonView test5(){
         Map<String,Object> result = new HashMap<String,Object>();
