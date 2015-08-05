@@ -1,3 +1,5 @@
+## ActiveRecord中的回调方法
+
 etmvc中ActiveRecord模型对象拥有很多的操作方法，其中有一类称为回调方法，在ActiveRecord模型对象的生命周期内，回调给予你更多的、更灵活控制能力。回调方法就象一个钩子，它允许在模型对象操作数据的前后执行一段逻辑，这实际就是ActiveRecord模型对象的AOP编程。
 
 ActiveRecord模型对象支持的回调方法有：
