@@ -10,7 +10,10 @@ etmvc是基于Java技术，为WEB开发提供的一套简易MVC框架。 简易�
 * 从实用的角度出发，精益求精，从实际开发经验中提取有用的模型
 * 设计专门同EXTJS等框架进行整合的机制
 
-
+## 下载
+  [etmvc-1.0.1-bin.rar](http://shuzheng.github.io/etmvc/Download/etmvc-1.0.1-bin.rar)
+  
+  **SHA1 Checksum:**2188ae15741e4148423d04626f2589b312c3698a
 
 ## 使用教程
 
