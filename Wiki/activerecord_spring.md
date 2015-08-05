@@ -1,3 +1,5 @@
+## ActiveRecord中集成spring
+
 etmvc中ActiveRecord（下称AR）在使用上可以独立使用，其数据库的连接信息通过activerecord.properties进行配置。
 AR提供一个简单的连接池实现，如果需要使用更高效的连接池，则可以利用spring来进行配置。AR集成spring分二步进行：
 
