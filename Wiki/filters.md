@@ -1,10 +1,12 @@
+## etmvc的过滤器基础
+
 struts2有拦截器，非常强大，spring mvc也有拦截器机制，但没有环绕的拦截处理机制。
 
 etmvc也有过滤器，etmvc的过滤器类似于ROR，分为前置过滤器，后置过滤器和环绕过滤器。过滤器能够处理所有像安全、日志等的横切关注点。
 
 我们先来看看应用得最多的前置过滤器，前置过滤器是控制器类中的一个方法，方法要求返回一个boolean类型，如果返回false，将停止后续的所有操作，否则继续后面的操作。来举个用户登录认证的例子，要求用户必须通过登录才能访问系统，使用前置过滤器是非常合适的，比如jpetstore中访问订单时要求用户必须登录后才能访问，否则重定向到登录页面让用户登录：
 
-```
+```java
 @BeforeFilter(execute="auth")
 public class OrderController extends ApplicationController{
     protected boolean auth() throws Exception{
@@ -28,7 +30,7 @@ public class OrderController extends ApplicationController{
 
 过滤器可以有only或except选项，以确定对那些Action方法有效，比如：
 
-```
+```java
 @BeforeFilters({
     @BeforeFilter(execute="checkAdminPrivilege",except={"showImage","download","addComment"}),
     @BeforeFilter(execute="checkUserPrivilege",only={"addComment"})
