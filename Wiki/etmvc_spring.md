@@ -1,6 +1,8 @@
+## etmvc框架集成spring
+
 使用etmvc时必须在web.xml中配置一个Filter，其filter-class是com.et.mvc.DispatcherFilter。如果想集成spring，则必须改成com.et.mvc.SpringDispatcherFilter，看一下集成spring的web.xml配置范例：
 
-```
+```xml
   <context-param>
   	<param-name>contextConfigLocation</param-name>
   	<param-value>/WEB-INF/applicationContext.xml</param-value>
@@ -28,7 +30,7 @@
 
 下面，我们以用户管理为例子来说明需注意的步骤，首先，编写UserService类：
 
-```
+```java
 public class UserService {
 	public String say(){
 		return "say from service";
@@ -44,7 +46,7 @@ public class UserService {
 
 再来看看控制器中的写法：
 
-```
+```java
 public class UserController extends ApplicationController{
 	private UserService userService;
 	
@@ -69,7 +71,7 @@ public class UserController extends ApplicationController{
 
 控制器类UserController提供二个action方法，say简单向浏览器输出一个问候信息，show返回一个用户资料页面：
 
-```
+```html
 	<table border="1">
 		<thead>
 			<tr>
@@ -90,7 +92,7 @@ public class UserController extends ApplicationController{
 
 控制器中userService由spring注入，来看看spring配置：
 
-```
+```xml
     <bean class="controllers.UserController" p:userService-ref="userService" scope="prototype" />
     
     <bean id="userService" class="services.UserService" />
