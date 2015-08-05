@@ -1,8 +1,10 @@
+## 关于etmvc的配置
+
 etmvc遵循“约定优于配置”的原则，通过文件的命名及存放位置来代替显式的配置，避免编写烦杂的XML配置文件。
 
 etmvc的配置只有一处，即在web.xml中配置一个filter，如下所示：
 
-```
+```xml
     <filter>
         <filter-name>etmvc</filter-name>
         <filter-class>com.et.mvc.DispatcherFilter</filter-class>
@@ -28,7 +30,7 @@ etmvc的配置只有一处，即在web.xml中配置一个filter，如下所示�
 其中，filter的初始参数有三个：controllerBasePackage, viewBasePath, plugin，说明如下：
 
 1 controllerBasePackage是控制器的基包名称，如controllers，所有的控制器类必须在controllers包中，或者在controllers的子包中。控制器类必须以Controller结尾，必须继承Controller，比如有如下的控制器类：
-```
+```java
 package controllers;
 
 public class ArticleController extends ApplicationController{
