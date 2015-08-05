@@ -99,33 +99,9 @@ com.et.ar.ActiveRecordBase.pool_size=2
   1. model：模型，是一个数据实体，将对应到具体的数据表中，这种映射关系是通过ActiveRecord实现的。所以数据表中的字段名就是模型对象中的属性名，不再需要用XML配置描述了。
   1. view：视图，etmvc支持多种视图，甚至一个action多视图，最常用的视图是JspView，在AJAX应用中是JsonView，下载处理二进制数据时是BinaryView，等等。
 
-## Hello,World经典示例
+**etmvc实现代码**
 
-我们利用etmvc来建立一个Hello,World的WEB应用程序。
-
-一、首先，建立新的WEB项目，引入et-mvc.jar和paranamer-1.3.jar，配置web.xml，加入一个过滤器，如下所示：
-
-```xml
-<filter>
-    <filter-name>etmvc</filter-name>
-    <filter-class>com.et.mvc.DispatcherFilter</filter-class>
-    <init-param>
-        <param-name>controllerBasePackage</param-name>
-        <param-value>controllers</param-value>
-    </init-param>
-    <init-param>
-        <param-name>viewBasePath</param-name>
-        <param-value>/views</param-value>
-    </init-param>
-</filter>
-<filter-mapping>
-    <filter-name>etmvc</filter-name>
-    <url-pattern>/*</url-pattern>
-</filter-mapping>
-```
-我们看到，过滤器com.et.mvc.DispatcherFilter目前只有二个参数，controllerBasePackage指的是控制器的包名，viewBasePath指的是视图模板的存放目录。
-
-二、接下来，我们开始编写控制器HelloController，一般我们会编写控制器基类ApplicationController，我们的HelloController会继承它。注意到，控制器的包名是controllers，这就是前面配置中的controllerBasePackage配置值。
+  接下来，我们开始编写控制器HelloController，一般我们会编写控制器基类ApplicationController，我们的HelloController会继承它。注意到，控制器的包名是controllers，这就是前面配置中的controllerBasePackage配置值。
 ```java
 package controllers;
 
@@ -147,7 +123,7 @@ public class HelloController extends ApplicationController{
 }
 ```
 
-三、至些，我们的Hello,World程序编写完毕，部署后在浏览器地址栏输入http://localhost:8080/helloworld/hello/say，将会输出hello,world字样。
+至此，我们的Hello,World程序编写完毕，部署后在浏览器地址栏输入http://localhost:8080/helloworld/hello/say，将会输出hello,world字样。
 
 
 ## 声明
