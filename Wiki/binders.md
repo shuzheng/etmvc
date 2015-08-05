@@ -2,16 +2,16 @@
 
 我们以一个用户注册的例子来说明模型绑定问题。首先，建立一个用户注册表单：
 
-```html
-        <h1>用户注册</h1>
-        <form action="<c:url value="/user/save"/>" method="POST">
-            <p>名称：<input type="text" name="name"></p>
-            <p>密码：<input type="password" name="password"></p>
-            <p>确认密码：<input type="password" name="confirmPassword"></p>
-            <p>邮箱：<input type="text" name="email"></p>
-            <p>电话：<input type="text" name="phone"></p>
-            <p><input type="submit" value="提交"> <input type="reset" value="重置"></p>
-        </form>
+```jsp
+<h1>用户注册</h1>
+<form action="<c:url value="/user/save"/>" method="POST">
+    <p>名称：<input type="text" name="name"></p>
+    <p>密码：<input type="password" name="password"></p>
+    <p>确认密码：<input type="password" name="confirmPassword"></p>
+    <p>邮箱：<input type="text" name="email"></p>
+    <p>电话：<input type="text" name="phone"></p>
+    <p><input type="submit" value="提交"> <input type="reset" value="重置"></p>
+</form>
 ```
 现在编写控制器用以处理表单：
 
